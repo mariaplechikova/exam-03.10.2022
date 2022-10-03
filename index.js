@@ -31,20 +31,45 @@ const books = [
       
 ]
 
-const booksTable = document.querySelector('.books')
+let id
+
+const booksTable = document.querySelector('tbody')
 console.log(booksTable)
 
-booksTable.innerHTML += '
-<table>
-    <thead>
-          <tr>
-            <th>#</th>
-            <th>Название</th>
-            <th>Автор</th>
-            <th>Год издательства</th>
-            <th>Название издательства</th>
-            <th>Количество страниц</th>
-            <th>Количество экземпляров в библиотеке</th>
-          </tr>
-    </thead>
-</table>'
+for (let i = 0; i < books.length; i++) {
+    booksTable.innerHTML += `
+    <tr>
+        <td>${books[i].id}</td>
+        <td>${books[i].name}</td>
+        <td>${books[i].author}</td>
+        <td>${books[i].year}</td>
+        <td>${books[i].nameOfPublish}</td>
+        <td>${books[i].pages}</td>
+        <td>${books[i].quantity}</td>
+        <td id=${books[i].id}>
+            <button class='edit'>Редактировать</button>
+            <button class='remove'>Удалить</button>
+        </td>
+    </tr>`
+}
+
+document.addEventListener('click', function(event) {
+    if (event.target.matches('.edit')) {
+        const id = event.target.parentElement.getAttribute('id')
+        console.log(id)
+        deleteBook(id)
+    }
+
+    return id
+
+})
+
+function deleteBook(id) {
+    
+    for (let i = 0; i < books.length; i++) {
+        if (books[i].id === +id) {
+            const newBooks = books.filter(books[i].id === +id)
+            console.log(newBooks)
+        }
+    }
+}

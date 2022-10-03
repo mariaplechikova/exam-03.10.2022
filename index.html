@@ -5,11 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="books">
+        <table>
+            <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Название</th>
+                    <th>Автор</th>
+                    <th>Год издательства</th>
+                    <th>Название издательства</th>
+                    <th>Количество страниц</th>
+                    <th>Количество экземпляров в библиотеке</th>
+                    <th>Действия</th>
+                  </tr>
+            </thead>
+            <tbody>
 
+            </tbody>
+        </table>
     </div>
+
+    <button>Добавить</button>
+    <form>
+        <label>
+            Название
+            <input type="text"></input>
+        </label>
+        <label>
+            Автор
+            <input type="text"></input>
+        </label>
+        <label>
+            Год издательства
+            <input type="number" min="1900"></input>
+        </label>
+        <label>
+            Название издательства
+            <input type="text"></input>
+        </label>
+        <label>
+            Количество страниц
+            <input type="number" min="1"></input>
+        </label>
+        <label>
+            Количество экземпляров в библиотеке
+            <input type="number"></input>
+        </label>
+    </form>
 
     <script src="index.js"></script>
 
